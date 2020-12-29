@@ -20,7 +20,7 @@ function(a) {
   return(as.numeric(a)**2)
 }
 ```
-And on the other .R file or R console, can just type the following to allow the function become an API endpoint.
+And on the other .R file or R console, can just type the following to allow the function become an API endpoint:
 ```
 library(plumber)
 pr <- plumb("plumber.R")
@@ -98,6 +98,17 @@ git push heroku master
 After you have setup everything, you should be able to call your API as followed:
 ```
 curl --data 'a=2' 'https://YOUR_APP_NAME.herokuapp.com/function_a'
+```
+
+Other than cURL, you can actually use other languages to access the API. For this project, I will use Python as an example to call the API.
+```
+import requests
+
+url = "https://YOUR_APP_NAME.herokuapp.com/function_a"
+data = {
+	"a": 2
+}
+response = requests.post(url = url, data = data)
 ```
 
 [r]: https://www.r-project.org
