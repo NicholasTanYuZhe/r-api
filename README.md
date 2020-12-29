@@ -105,9 +105,7 @@ Other than cURL, you can actually use other languages to access the API. For thi
 import requests
 
 url = "https://YOUR_APP_NAME.herokuapp.com/function_a"
-data = {
-	"a": 2
-}
+data = {"a": 2}
 response = requests.post(url = url, data = data)
 ```
 
